@@ -95,5 +95,53 @@ class SpringBootCrudExample2ApplicationTests {
 
 	}
 
+	/*
+	1. @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT):
+This annotation is used in integration tests
+to start the entire Spring Boot application context.
+ RANDOM_PORT ensures that the application runs
+ on a random port to avoid port conflicts during tests.
+
+2. @LocalServerPort:
+This annotation is used to inject the
+random port that was assigned to the
+test instance. It allows the test to
+reference the actual port the Spring Boot
+ application is running on during the test.
+
+3. H2 Database:
+H2 is an in-memory database used
+mainly for testing purposes.
+It is lightweight, fast, and can be embedded
+ within the application. Since it's in-memory,
+  the data is not persisted after the
+  application stops, making it ideal for testing.
+
+4. spring.datasource.url=jdbc:h2:mem:testdb:
+This configures the application to use
+ an H2 database with the URL jdbc:h2:mem:testdb.mem
+ indicates an in-memory database,
+ and testdb is the database name.
+
+5. spring.h2.console.enabled=true:
+This enables the H2 database web console,
+allowing developers to view and interact
+with the H2 database using a browser.
+You can typically access it via
+http://localhost:{port}/h2-console.
+
+6. spring.jpa.show-sql=true:
+This configuration logs SQL
+statements executed by Hibernate
+(the JPA provider) to the console.
+It helps developers see the actual SQL
+ queries being generated and run by Hibernate.
+
+7. spring.jpa.properties.hibernate.format_sql=true:
+This formats the SQL output
+for readability. It adds indentation
+and line breaks to make the logged SQL easier to read.
+	 */
+
 
 }
